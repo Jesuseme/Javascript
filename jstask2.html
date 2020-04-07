@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equipv="content-type" content="text/html; charset=utf-8" >
+    <meta name="viewport" content="width=device-width, intial-scale=1" >
+    <title>JavaScript Task2</title>
+</head>
+
+<body>
+
+    <script type="text/javascript">
+        // creating the array of objects
+        let account = [{p:2500 , t:1.8}, {p:1000,t:5}, {p:3000,t:1}, {p:2000, t:3} ];
+        
+        function interestCalculator(){
+                
+            var i;
+            var r; 
+            var interest;
+            var interestData = [];
+        
+            //loop to calculate rate,interest of each object
+            for(i=0; i<account.length; i++) {
+             
+                if (account[i].p >=2500 && 1 < account[i].t < 3 ) {
+                    r = 3;
+                }
+
+                else if (account[i].p >= 2500 && account[i].t >=3) {
+                    r = 4;
+                }
+
+                else if (account[i].p < 2500 || account[i].t <= 1){
+                    r = 2;
+                }
+
+                else{
+                    r = 1;
+                }
+
+                //display object keys to make sure we are on the right track
+                console.log("rate:"+ r + "%");
+                interest = (account[i].p * r * account[i].t ) / 100 ;
+                console.log("interest:"+ interest);
+                
+                //add new object to empty interestData array
+                interestData.push({p:account[i].p, r:r, t:account[i].t, i:interest});           
+            }         
+            console.log(interestData);    
+        }    
+        
+        interestCalculator();
+
+    </script>
+</body>
+</html>

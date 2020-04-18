@@ -3,47 +3,53 @@
     
     var x; 
     
-function yugioh(x){ 
-    var array1 = []; 
-    var i;        
-    for (i=1; i<=x; i++){
-        var y = "";
-        if ( i % 2 == 0 ){
-            y += "yu";
-            if ( i % 3 == 0 ){
-                y += "-gi";
-                if (i % 5 == 0 ){
+    function yugioh(x){ 
+        //defining the empty array
+        var array1 = []; 
+        var i;
+        
+        //for loop to make every single integer between 1 and the argument(x)
+        for (i=1; i<=x; i++){
+            var y = "";
+            if ( i % 2 == 0 ){
+                y += "yu";
+                if ( i % 3 == 0 ){
+                    y += "-gi";
+                    if (i % 5 == 0 ){
+                        y += "-oh";
+                    }
+                }
+                else if (i % 5 == 0){
                     y += "-oh";
                 }
             }
-            else if (i % 5 == 0){
-                y += "-oh";
-            }
-        }
         
-        else if (i % 3 == 0 ){
-            y += "gi";
-            if( i % 5 == 0){
-                y += "-oh" 
+            else if (i % 3 == 0 ){
+                y += "gi";
+                if( i % 5 == 0){
+                    y += "-oh" 
+                }
             }
-        }
 
-        else if (i % 5 == 0){
-            y += "oh"
-        }
+            else if (i % 5 == 0){
+                y += "oh"
+            }
 
-        else {
-            y = i;
-        }
+            else {
+                y = i;
+            }
          
         
-        
-        array1.push(y);
+            //add new item to the array
+            array1.push(y);
+        }
+
+        //displays the complete array in the console
+        console.log(array1);
+        //displays the complete array on the webpage needed this to see the whole thing fully
+        document.write("<br> [ " + array1 + "] <br>");
     }
 
-    console.log(array1);
-    document.write("<br> [ " + array1 + "] <br>");
-}
 
 yugioh(100);
 

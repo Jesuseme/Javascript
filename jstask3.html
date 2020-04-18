@@ -1,0 +1,54 @@
+<script type ="text/javascript">
+
+    
+    var x; 
+    
+function yugioh(x){ 
+    var array1 = []; 
+    var i;        
+    for (i=1; i<=x; i++){
+        var y = "";
+        if ( i % 2 == 0 ){
+            y += "yu";
+            if ( i % 3 == 0 ){
+                y += "-gi";
+                if (i % 5 == 0 ){
+                    y += "-oh";
+                }
+            }
+            else if (i % 5 == 0){
+                y += "-oh";
+            }
+        }
+        
+        else if (i % 3 == 0 ){
+            y += "gi";
+            if( i % 5 == 0){
+                y += "-oh" 
+            }
+        }
+
+        else if (i % 5 == 0){
+            y += "oh"
+        }
+
+        else {
+            y = i;
+        }
+         
+        
+        
+        array1.push(y);
+    }
+
+    console.log(array1);
+    document.write("<br> [ " + array1 + "] <br>");
+}
+
+yugioh(100);
+
+yugioh(150);
+
+
+
+</script>
